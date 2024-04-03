@@ -1,4 +1,4 @@
-import * as tokenHelper from './token';
+import * as tokenHelper from './loginServices';
 
 export default {
   tokenHelper,

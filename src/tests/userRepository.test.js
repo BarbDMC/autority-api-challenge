@@ -1,5 +1,5 @@
 import db from '@/database';
-import { expect, should } from 'chai';
+import { expect } from 'chai';
 import { user, user2 } from './fixtures/users';
 import { findAllUsers, findUserById, findUniqueUser } from '../repositories/userRepository';
 
@@ -28,7 +28,7 @@ describe('User Repository', () => {
 
     it('should return null if user is not found', async () => {
       const foundUser = await findUserById(100);
-      should.not.exist(foundUser);
+      expect(foundUser).to.equal(null);
     });
   });
 
@@ -40,7 +40,7 @@ describe('User Repository', () => {
 
     it('should return null if user is not found', async () => {
       const foundUser = await findUniqueUser('noexisting@email.com');
-      should.not.exist(foundUser);
+      expect(foundUser).to.equal(null);
     });
   });
 });
