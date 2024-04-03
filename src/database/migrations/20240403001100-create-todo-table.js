@@ -1,4 +1,4 @@
-export const up = (queryInterface, Sequelize) => queryInterface.createTable('todo', {
+export const up = (queryInterface, Sequelize) => queryInterface.createTable('todos', {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -36,4 +36,4 @@ export const up = (queryInterface, Sequelize) => queryInterface.createTable('tod
   },
 });
 
-export const down = (queryInterface) => queryInterface.dropTable('tasks');
+export const down = (queryInterface) => queryInterface.dropTable('todos');

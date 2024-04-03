@@ -1,10 +1,10 @@
 import { DataTypes, Model } from 'sequelize';
 
 export default function (sequelize) {
-  class Task extends Model {
+  class Todo extends Model {
   }
 
-  Task.init({
+  Todo.init({
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -41,11 +41,11 @@ export default function (sequelize) {
       allowNull: true,
     },
   }, {
-    modelName: 'Task',
+    modelName: 'todo',
     sequelize,
     paranoid: true,
     timestamps: true,
   });
 
-  return Task;
+  return Todo;
 }
