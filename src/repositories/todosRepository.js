@@ -1,5 +1,7 @@
 import db from '@/database';
 
+export const findAllTodos = () => db.models.todo.findAll();
+
 export const findAllAuthorTodos = (id) => db.models.todo.findAll({ where: { author: id } });
 
 export const findTodoById = (id) => db.models.todo.findByPk(id);

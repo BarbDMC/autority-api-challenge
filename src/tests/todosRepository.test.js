@@ -1,6 +1,7 @@
 import db from '@/database';
 import { expect } from 'chai';
 import {
+  findAllTodos,
   findAllAuthorTodos,
   findTodoById,
   createTodo,
@@ -17,6 +18,14 @@ describe('Todos Repository', () => {
 
   after(async () => {
     await db.models.todo.destroy({ where: {}, truncate: true, force: true });
+  });
+
+  describe('findAllTodos', () => {
+    it('should return all todos', async () => {
+      const todos = await findAllTodos();
+      expect(todos).to.be.an('array');
+      expect(todos).to.have.lengthOf(1);
+    });
   });
 
   describe('findAllAuthorTodos', () => {

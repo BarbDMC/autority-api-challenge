@@ -1,9 +1,15 @@
 import {
+  findAllTodos,
+  findTodoById,
   findAllAuthorTodos,
   createTodo,
   updateTodo,
   deleteTodo,
 } from '@/repositories/todosRepository';
+
+export const getAllTodos = async () => findAllTodos();
+
+export const getTodoById = async (todoId) => findTodoById(todoId);
 
 export const getAllAuthorTodos = async (author) => findAllAuthorTodos(author);
 
