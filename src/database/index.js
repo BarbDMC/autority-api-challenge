@@ -3,7 +3,8 @@ import { Sequelize } from 'sequelize';
 import * as config from '@/config/sequelize';
 
 // import models
-import userModel from './models/user';
+import userModel from '../models/userModel';
+import taskModel from '../models/todoModel';
 
 // Configuration
 const env = process.env.NODE_ENV;
@@ -15,6 +16,7 @@ const sequelize = new Sequelize(sequelizeConfig);
 // Import all model files
 const modelDefiners = [
   userModel,
+  taskModel,
 ];
 
 // eslint-disable-next-line no-restricted-syntax
