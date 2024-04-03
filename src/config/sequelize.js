@@ -23,6 +23,7 @@ export const development = {
 
 export const test = {
   ...defaultConfig,
+  database: `${DB_NAME}_test`,
   logging: false,
 };
 

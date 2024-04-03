@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 
-import { tokenHelper } from '@/helpers';
+import { generateToken } from '@/services/token';
 
 export default function (sequelize) {
   class User extends Model {
@@ -10,7 +10,7 @@ export default function (sequelize) {
 
     generateToken(expiresIn = '1h') {
       const data = { id: this.id, email: this.email };
-      return tokenHelper.generateToken(data, expiresIn);
+      return generateToken(data, expiresIn);
     }
   }
 
