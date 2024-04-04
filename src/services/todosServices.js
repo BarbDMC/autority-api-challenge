@@ -17,4 +17,10 @@ export const addTodo = (todo) => createTodo(todo);
 
 export const editTodo = async (todoId, todo) => updateTodo(todoId, todo);
 
-export const deleteTodoItem = async (todoId) => deleteTodo(todoId);
+export const deleteTodoItem = async (todoId) => {
+  const deletedCount = await deleteTodo(todoId);
+
+  if (deletedCount === 0) {
+    throw new Error('Todo not found or already deleted');
+  }
+};
