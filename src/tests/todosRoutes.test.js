@@ -34,7 +34,7 @@ describe('TodosRoutes', () => {
 
     it('returns a todo by id', async () => {
       const response = await chai.request(app)
-        .get('/tasks/1');
+        .get('/task/1');
 
       expect(response).to.have.status(200);
       expect(response.body).to.exist;
