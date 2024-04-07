@@ -10,7 +10,7 @@ const todoSchema = {
     author: { type: 'string' },
     createdAt: { type: 'string', format: 'date-time' },
     updatedAt: { type: 'string', format: 'date-time' },
-    deleteAt: { type: 'string', format: 'date-time' },
+    deletedAt: { type: ['string', 'null'], format: 'date-time' },
   },
   required: ['name', 'description', 'isComplete', 'author', 'createdAt', 'updatedAt'],
   additionalProperties: false,
